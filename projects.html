@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects - Srimathi R</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#0a0a0b;
+    --surface-1:#15151a;
+    --surface-2:#1c1c21;
+    --hairline:rgba(255,255,255,0.08);
+    --hairline-strong:rgba(255,255,255,0.16);
+    --text:#ece8e0;
+    --text-dim:#9a978f;
+    --text-faint:#5e5c58;
+
+    --gold-1:#f4dca0;
+    --gold-2:#caa44d;
+    --gold-3:#8a6a26;
+
+    --silver-1:#f1f2f4;
+    --silver-2:#b9bdc4;
+    --silver-3:#74787f;
+
+    --steel-1:#7d818a;
+    --steel-2:#4a4d52;
+    --steel-3:#2c2e31;
+
+    --emerald-1:#a8e0c4;
+    --emerald-2:#4f9d76;
+    --emerald-3:#1f5c41;
+
+    --amber-1:#f6dd9a;
+    --amber-2:#d9a233;
+    --amber-3:#8a5d12;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--black);
+    color:var(--text);
+    font-family:'Manrope',sans-serif;
+    line-height:1.6;
+    background-image:repeating-linear-gradient(115deg, rgba(255,255,255,0.012) 0px, rgba(255,255,255,0.012) 1px, transparent 1px, transparent 3px);
+  }
+
+  a{color:inherit;text-decoration:none;}
+  ::selection{background:var(--gold-2);color:#0a0a0b;}
+
+  svg.icon{width:15px;height:15px;flex:none;}
+
+  /* ===== TOP BAR ===== */
+  .top-bar{
+    position:sticky;top:0;z-index:60;
+    height:64px;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 2.4rem;
+    background:rgba(10,10,11,0.78);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--hairline);
+  }
+  .back-link{
+    display:flex;align-items:center;gap:0.6rem;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.74rem;letter-spacing:0.1em;text-transform:uppercase;
+    color:var(--text-dim);
+    transition:color .25s ease;
+  }
+  .back-link:hover{color:var(--gold-1);}
+  .back-link svg{width:14px;height:14px;}
+  .top-title{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:600;font-size:1.2rem;
+    background:linear-gradient(180deg,var(--silver-1),var(--silver-2) 55%,var(--silver-3));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .top-bar .spacer{width:90px;}
+  @media (max-width:680px){ .top-title{font-size:1rem;} }
+
+  /* ===== LAYOUT ===== */
+  .layout{
+    display:flex;
+    max-width:1280px;
+    margin:0 auto;
+    align-items:flex-start;
+  }
+
+  /* ----- Sidebar ----- */
+  .sidebar{
+    width:300px;
+    flex:none;
+    position:sticky;
+    top:64px;
+    height:calc(100vh - 64px);
+    padding:3rem 1.8rem 2rem 2.4rem;
+    border-right:1px solid var(--hairline);
+    overflow-y:auto;
+  }
+  .sidebar-eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;
+    color:var(--gold-2);margin-bottom:0.4rem;
+  }
+  .sidebar-title{
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.6rem;font-weight:600;
+    margin-bottom:2.2rem;
+  }
+  .side-nav{
+    list-style:none;
+    position:relative;
+    padding-left:1.3rem;
+  }
+  .side-rail{
+    position:absolute;left:0;top:2px;bottom:2px;width:1px;
+    background:var(--hairline-strong);
+  }
+  .side-rail-marker{
+    position:absolute;left:-1.5px;width:4px;border-radius:2px;
+    background:linear-gradient(180deg,var(--gold-1),var(--gold-3));
+    box-shadow:0 0 10px rgba(202,164,77,0.55);
+    top:0;height:0;
+    transition:top .45s cubic-bezier(.4,0,.2,1), height .45s cubic-bezier(.4,0,.2,1);
+  }
+  .side-item{
+    display:block;
+    padding:0.85rem 0;
+    cursor:pointer;
+  }
+  .side-item-num{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.66rem;
+    color:var(--text-faint);
+    letter-spacing:0.06em;
+    display:block;
+    margin-bottom:0.2rem;
+    transition:color .3s ease;
+  }
+  .side-item-title{
+    font-size:0.92rem;
+    font-weight:600;
+    color:var(--text-faint);
+    transition:color .3s ease, transform .3s ease;
+    display:block;
+  }
+  .side-item.active .side-item-title{color:var(--silver-1);transform:translateX(2px);}
+  .side-item.active .side-item-num{color:var(--gold-2);}
+  .side-item:hover .side-item-title{color:var(--text);}
+
+  @media (max-width:880px){
+    .layout{flex-direction:column;}
+    .sidebar{
+      width:100%;height:auto;position:sticky;top:64px;
+      padding:1rem 1.4rem;
+      border-right:none;border-bottom:1px solid var(--hairline);
+      background:rgba(10,10,11,0.92);backdrop-filter:blur(10px);
+    }
+    .sidebar-title,.sidebar-eyebrow{display:none;}
+    .side-nav{
+      display:flex;gap:0.4rem;overflow-x:auto;padding-left:0;
+      scrollbar-width:none;
+    }
+    .side-nav::-webkit-scrollbar{display:none;}
+    .side-rail,.side-rail-marker{display:none;}
+    .side-item{
+      flex:none;padding:0.5rem 0.95rem;border-radius:30px;
+      border:1px solid var(--hairline);white-space:nowrap;
+    }
+    .side-item.active{border-color:var(--gold-2);background:rgba(202,164,77,0.08);}
+    .side-item-num{display:none;}
+    .side-item-title{font-size:0.78rem;}
+  }
+
+  /* ----- Main ----- */
+  .projects-main{
+    flex:1;
+    min-width:0;
+    padding:3.6rem 4vw 6rem;
+  }
+  .page-head{margin-bottom:3.4rem;max-width:600px;}
+  .page-eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;
+    color:var(--gold-2);margin-bottom:0.8rem;
+    display:flex;align-items:center;gap:0.7rem;
+  }
+  .page-eyebrow::before{content:'';width:22px;height:1px;background:linear-gradient(90deg,var(--gold-2),transparent);}
+  .page-head h1{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:600;font-size:clamp(2.1rem,4vw,2.9rem);
+    margin-bottom:0.7rem;
+  }
+  .page-head p{color:var(--text-dim);font-size:1rem;max-width:520px;}
+
+  .project-block{
+    scroll-margin-top:90px;
+    padding:2.4rem 0;
+    border-bottom:1px solid var(--hairline);
+  }
+  .project-block:last-child{border-bottom:none;}
+
+  .pb-top{
+    display:flex;justify-content:space-between;align-items:flex-start;
+    flex-wrap:wrap;gap:0.8rem;margin-bottom:0.5rem;
+  }
+  .pb-title-wrap{display:flex;align-items:center;gap:0.9rem;flex-wrap:wrap;}
+  .pb-title{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.7rem;}
+  .pb-meta-right{
+    text-align:right;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.7rem;color:var(--text-faint);letter-spacing:0.04em;
+    white-space:nowrap;
+  }
+
+  .status-pill{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;
+    padding:0.28rem 0.65rem;border-radius:3px;font-weight:600;
+  }
+  .status-pill.gold{background:linear-gradient(160deg,var(--gold-1),var(--gold-3));color:#3a2a08;}
+  .status-pill.silver{background:linear-gradient(160deg,var(--silver-1),var(--silver-3));color:#23262b;}
+  .status-pill.steel{background:linear-gradient(160deg,var(--steel-1),var(--steel-3));color:#0d0d0e;}
+  .status-pill.green{background:linear-gradient(160deg,var(--emerald-1),var(--emerald-2) 55%,var(--emerald-3));color:#0e2b1e;box-shadow:0 3px 10px rgba(79,157,118,0.25), inset 0 1px 0 rgba(255,255,255,0.35);}
+  .status-pill.amber{background:linear-gradient(160deg,var(--amber-1),var(--amber-2) 55%,var(--amber-3));color:#3a2a08;box-shadow:0 3px 10px rgba(217,162,51,0.25), inset 0 1px 0 rgba(255,255,255,0.35);}
+
+  .pb-subrow{
+    display:flex;justify-content:space-between;align-items:baseline;
+    flex-wrap:wrap;gap:0.5rem 1.4rem;
+    margin-bottom:1.1rem;
+  }
+  .pb-type{
+    font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:var(--silver-2);
+    text-transform:uppercase;letter-spacing:0.1em;
+  }
+  .pb-tags{
+    display:flex;flex-wrap:wrap;
+    gap:0 0.85rem;
+    margin-left:auto;
+  }
+  .pb-tags span{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.68rem;
+    letter-spacing:0.04em;
+    color:var(--text-faint);
+    opacity:0.75;
+    white-space:nowrap;
+  }
+  .pb-tags span::before{
+    content:'·';
+    margin-right:0.85rem;
+    color:var(--text-faint);
+    opacity:0.5;
+  }
+  .pb-tags span:first-child::before{content:none;margin-right:0;}
+
+  .pb-desc{color:var(--text-dim);font-size:0.96rem;max-width:none;margin-bottom:1.3rem;}
+  
+  .pb-links{display:flex;flex-wrap:wrap;gap:0.7rem;}
+  .pb-link{
+    display:inline-flex;align-items:center;gap:0.5rem;
+    padding:0.5rem 0.95rem;
+    border:1px solid var(--hairline);
+    border-radius:30px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.7rem;letter-spacing:0.05em;
+    color:var(--text-dim);
+    transition:all .25s ease;
+  }
+  .pb-link:hover{
+    color:var(--gold-1);
+    border-color:var(--gold-2);
+    background:rgba(202,164,77,0.06);
+    transform:translateY(-2px);
+  }
+
+  footer.page-footer{
+    text-align:center;padding:3rem 0;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.68rem;color:var(--text-faint);letter-spacing:0.05em;
+  }
+
+  :focus-visible{outline:2px solid var(--gold-2);outline-offset:3px;}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <a href="index.html" class="back-link">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+    My Portfolio
+  </a>
+  <div class="top-title">Srimathi R - Projects</div>
+  <div class="spacer"></div>
+</div>
+
+<div class="layout">
+
+  <aside class="sidebar">
+    <div class="sidebar-eyebrow">Index</div>
+    <div class="sidebar-title">All Work</div>
+    <ul class="side-nav" id="sideNav">
+      <div class="side-rail"></div>
+      <div class="side-rail-marker" id="railMarker"></div>
+
+      <li class="side-item" data-target="proj-chatbot">
+        <span class="side-item-num">01</span>
+        <span class="side-item-title">Video RAG Project</span>
+      </li>
+      <li class="side-item" data-target="proj-chatbot">
+        <span class="side-item-num">02</span>
+        <span class="side-item-title">GitHub Chatbot</span>
+      </li>
+      <li class="side-item" data-target="proj-unlearning">
+        <span class="side-item-num">03</span>
+        <span class="side-item-title">Machine Unlearning</span>
+      </li>
+      <li class="side-item" data-target="proj-eval">
+        <span class="side-item-num">04</span>
+        <span class="side-item-title">Code Evaluation Platform</span>
+      </li>
+      <li class="side-item" data-target="proj-recipe">
+        <span class="side-item-num">05</span>
+        <span class="side-item-title">Recipe Rating Prediction</span>
+      </li>
+    </ul>
+  </aside>
+
+  <main class="projects-main">
+
+    <div class="page-head">
+      <div class="page-eyebrow">Selected Work</div>
+      <h1>Projects</h1>
+      <p>A closer look at what I've built - research prototypes, course projects, and things made for fun.</p>
+    </div>
+
+    <!-- ================= PROJECT 5 ================= -->
+    <article class="project-block" id="proj-chatbot">
+      <div class="pb-top">
+        <div class="pb-title-wrap">
+          <span class="pb-title">Video RAG Project</span>
+          <span class="status-pill amber">In Progress</span>
+        </div>
+        <div class="pb-meta-right">May '25 – Jun '25</div>
+      </div>
+      <div class="pb-subrow">
+        <span class="pb-type">Personal Project</span>
+        <div class="pb-tags">
+          <span>RAG</span><span>LangChain</span><span>HuggingFace</span><span>Streamlit</span>
+        </div>
+      </div>
+      <p class="pb-desc">
+        A Retrieval-Augmented Generation system for Videos. Drafting Phase.
+      </p>
+      <!-- <div class="pb-links">
+        <a class="pb-link" href="#" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.97 5.26.97 11.53c0 4.93 3.2 9.11 7.64 10.59.56.1.76-.24.76-.54 0-.27-.01-1.16-.02-2.1-3.11.68-3.77-1.32-3.77-1.32-.51-1.3-1.24-1.64-1.24-1.64-1.02-.7.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15 1 1.71 2.62 1.22 3.26.93.1-.72.39-1.22.71-1.5-2.48-.28-5.09-1.24-5.09-5.51 0-1.22.43-2.21 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.08 1.15.9-.25 1.85-.37 2.8-.37.95 0 1.9.13 2.8.37 2.14-1.45 3.08-1.15 3.08-1.15.61 1.54.23 2.68.11 2.96.72.79 1.15 1.78 1.15 3 0 4.28-2.62 5.23-5.11 5.51.4.35.76 1.04.76 2.1 0 1.52-.01 2.74-.01 3.11 0 .3.2.65.77.54 4.43-1.48 7.63-5.66 7.63-10.59C23.03 5.26 18.27.5 12 .5z"/></svg>
+          GitHub
+        </a>
+        <a class="pb-link" href="#" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          Demo
+        </a>
+      </div> -->
+    </article>
+
+    <!-- ================= PROJECT 4 ================= -->
+    <article class="project-block" id="proj-chatbot">
+      <div class="pb-top">
+        <div class="pb-title-wrap">
+          <span class="pb-title">GitHub Chatbot</span>
+          <span class="status-pill green">Completed</span>
+        </div>
+        <div class="pb-meta-right">May '25 – Jun '25</div>
+      </div>
+      <div class="pb-subrow">
+        <span class="pb-type">Personal Project</span>
+        <div class="pb-tags">
+          <span>RAG</span><span>LangChain</span><span>HuggingFace</span><span>Streamlit</span>
+        </div>
+      </div>
+      <p class="pb-desc">
+        A Retrieval-Augmented Generation system for semantic code search across GitHub repositories, built on HuggingFace embeddings, a Chroma vector store, and LangChain. DeepSeek handles contextual reasoning across multiple files, with caching and index tuning to keep responses fast.
+      </p>
+      <div class="pb-links">
+        <!-- <a class="pb-link" href="#" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.97 5.26.97 11.53c0 4.93 3.2 9.11 7.64 10.59.56.1.76-.24.76-.54 0-.27-.01-1.16-.02-2.1-3.11.68-3.77-1.32-3.77-1.32-.51-1.3-1.24-1.64-1.24-1.64-1.02-.7.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15 1 1.71 2.62 1.22 3.26.93.1-.72.39-1.22.71-1.5-2.48-.28-5.09-1.24-5.09-5.51 0-1.22.43-2.21 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.08 1.15.9-.25 1.85-.37 2.8-.37.95 0 1.9.13 2.8.37 2.14-1.45 3.08-1.15 3.08-1.15.61 1.54.23 2.68.11 2.96.72.79 1.15 1.78 1.15 3 0 4.28-2.62 5.23-5.11 5.51.4.35.76 1.04.76 2.1 0 1.52-.01 2.74-.01 3.11 0 .3.2.65.77.54 4.43-1.48 7.63-5.66 7.63-10.59C23.03 5.26 18.27.5 12 .5z"/></svg>
+          GitHub
+        </a>
+        <a class="pb-link" href="#" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          Demo
+        </a> -->
+      </div>
+    </article>
+
+    <!-- ================= PROJECT 3 ================= -->
+    <article class="project-block" id="proj-unlearning">
+      <div class="pb-top">
+        <div class="pb-title-wrap">
+          <span class="pb-title">Machine Unlearning</span>
+          <span class="status-pill green">Completed</span>
+          <span class="status-pill gold">Published</span>
+        </div>
+        <div class="pb-meta-right">Sep '24 – Apr '25</div>
+      </div>
+      <div class="pb-subrow">
+        <span class="pb-type">Final Year Project, B.E.</span>
+        <div class="pb-tags">
+          <span>ML</span><span>Clustering</span><span>GraphML</span><span>IEEE</span>
+        </div>
+      </div>
+      <p class="pb-desc">
+        A cluster-based shard framework for machine unlearning in graph-based recommendation systems, using KMeans partitioning and adaptive aggregation. Cuts retraining cost by 85% while keeping accuracy within 1–2% of a full retrain - validated for user-, item-, and sample-wise unlearning. Published in IEEE.
+      </p>
+      <div class="pb-links">
+        <!-- <a class="pb-link" href="#" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.97 5.26.97 11.53c0 4.93 3.2 9.11 7.64 10.59.56.1.76-.24.76-.54 0-.27-.01-1.16-.02-2.1-3.11.68-3.77-1.32-3.77-1.32-.51-1.3-1.24-1.64-1.24-1.64-1.02-.7.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15 1 1.71 2.62 1.22 3.26.93.1-.72.39-1.22.71-1.5-2.48-.28-5.09-1.24-5.09-5.51 0-1.22.43-2.21 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.08 1.15.9-.25 1.85-.37 2.8-.37.95 0 1.9.13 2.8.37 2.14-1.45 3.08-1.15 3.08-1.15.61 1.54.23 2.68.11 2.96.72.79 1.15 1.78 1.15 3 0 4.28-2.62 5.23-5.11 5.51.4.35.76 1.04.76 2.1 0 1.52-.01 2.74-.01 3.11 0 .3.2.65.77.54 4.43-1.48 7.63-5.66 7.63-10.59C23.03 5.26 18.27.5 12 .5z"/></svg>
+          GitHub
+        </a>
+        <a class="pb-link" href="#" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          IEEE Paper
+        </a>
+      </div> -->
+    </article>
+
+    <!-- ================= PROJECT 2 ================= -->
+    <article class="project-block" id="proj-eval">
+      <div class="pb-top">
+        <div class="pb-title-wrap">
+          <span class="pb-title">Code Evaluation Platform</span>
+          <span class="status-pill green">Completed</span>
+        </div>
+        <div class="pb-meta-right">Oct '24 – Nov '24</div>
+      </div>
+      <div class="pb-subrow">
+        <span class="pb-type">Course Project</span>
+        <div class="pb-tags">
+          <span>GenAI</span><span>VueJS</span><span>RESTAPIs</span><span>GeminiAPI</span>
+        </div>
+      </div>
+      <p class="pb-desc">
+        A full-stack GenAI evaluation platform that automates grading of programming assignments - LLM-based functionality checks, plagiarism detection, and static code quality assessment, with role-based dashboards for students, instructors, and admins. Built with Python, SQL, Vue.js, and the Gemini and GitHub APIs.
+      </p>
+      <div class="pb-links">
+        <a class="pb-link" href="#" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.97 5.26.97 11.53c0 4.93 3.2 9.11 7.64 10.59.56.1.76-.24.76-.54 0-.27-.01-1.16-.02-2.1-3.11.68-3.77-1.32-3.77-1.32-.51-1.3-1.24-1.64-1.24-1.64-1.02-.7.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15 1 1.71 2.62 1.22 3.26.93.1-.72.39-1.22.71-1.5-2.48-.28-5.09-1.24-5.09-5.51 0-1.22.43-2.21 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.08 1.15.9-.25 1.85-.37 2.8-.37.95 0 1.9.13 2.8.37 2.14-1.45 3.08-1.15 3.08-1.15.61 1.54.23 2.68.11 2.96.72.79 1.15 1.78 1.15 3 0 4.28-2.62 5.23-5.11 5.51.4.35.76 1.04.76 2.1 0 1.52-.01 2.74-.01 3.11 0 .3.2.65.77.54 4.43-1.48 7.63-5.66 7.63-10.59C23.03 5.26 18.27.5 12 .5z"/></svg>
+          GitHub
+        </a>
+        <!-- <a class="pb-link" href="#" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          Demo
+        </a> -->
+        <!-- <a class="pb-link" href="#" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          Web App
+        </a> -->
+      </div>
+    </article>
+
+    <!-- ================= PROJECT 1 ================= -->
+    <article class="project-block" id="proj-recipe">
+      <div class="pb-top">
+        <div class="pb-title-wrap">
+          <span class="pb-title">Recipe Rating Prediction</span>
+          <span class="status-pill green">Completed</span>
+        </div>
+        <div class="pb-meta-right">Jan '24 – Feb '24</div>
+      </div>
+      <div class="pb-subrow">
+        <span class="pb-type">Course Project</span>
+        <div class="pb-tags">
+          <span>ScikitLearn</span><span>Pandas</span><span>EDA</span><span>Kaggle</span>
+        </div>
+      </div>
+      <p class="pb-desc">
+        A multi-class classification model predicting recipe ratings, using Random Forest, SVM, and a Voting Classifier with heavy feature engineering on a Kaggle dataset. Cross-validated against F1-score and accuracy, landing a Top-50 leaderboard finish.
+      </p>
+      <div class="pb-links">
+        <a class="pb-link" href="#" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.97 5.26.97 11.53c0 4.93 3.2 9.11 7.64 10.59.56.1.76-.24.76-.54 0-.27-.01-1.16-.02-2.1-3.11.68-3.77-1.32-3.77-1.32-.51-1.3-1.24-1.64-1.24-1.64-1.02-.7.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15 1 1.71 2.62 1.22 3.26.93.1-.72.39-1.22.71-1.5-2.48-.28-5.09-1.24-5.09-5.51 0-1.22.43-2.21 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.08 1.15.9-.25 1.85-.37 2.8-.37.95 0 1.9.13 2.8.37 2.14-1.45 3.08-1.15 3.08-1.15.61 1.54.23 2.68.11 2.96.72.79 1.15 1.78 1.15 3 0 4.28-2.62 5.23-5.11 5.51.4.35.76 1.04.76 2.1 0 1.52-.01 2.74-.01 3.11 0 .3.2.65.77.54 4.43-1.48 7.63-5.66 7.63-10.59C23.03 5.26 18.27.5 12 .5z"/></svg>
+          GitHub
+        </a>
+        <!-- <a class="pb-link" href="#" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          Write-up
+        </a> -->
+      </div>
+    </article>
+
+  </main>
+</div>
+
+<footer class="page-footer">© 2026 Srimathi R</footer>
+
+<script>
+  const items = Array.from(document.querySelectorAll('.side-item'));
+  const blocks = items.map(i => document.getElementById(i.dataset.target));
+  const marker = document.getElementById('railMarker');
+  const nav = document.getElementById('sideNav');
+
+  function setActive(item){
+    items.forEach(i => i.classList.remove('active'));
+    item.classList.add('active');
+    if (window.innerWidth > 880) {
+      marker.style.top = item.offsetTop + 'px';
+      marker.style.height = item.offsetHeight + 'px';
+    } else {
+      item.scrollIntoView({behavior:'smooth', inline:'center', block:'nearest'});
+    }
+  }
+
+  items.forEach(item => {
+    item.addEventListener('click', () => {
+      const target = document.getElementById(item.dataset.target);
+      target.scrollIntoView({behavior:'smooth'});
+    });
+  });
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const match = items.find(i => i.dataset.target === entry.target.id);
+          if (match) setActive(match);
+        }
+      });
+    }, { rootMargin: '-30% 0px -55% 0px', threshold: 0 });
+    blocks.forEach(b => b && observer.observe(b));
+  }
+
+  // Initialize marker position on load
+  window.addEventListener('load', () => { if (items[0]) setActive(items[0]); });
+</script>
+
+</body>
+</html>

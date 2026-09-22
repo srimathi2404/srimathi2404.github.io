@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Projects - R Srimathi</title>
+<link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -308,24 +309,48 @@
       <div class="side-rail"></div>
       <div class="side-rail-marker" id="railMarker"></div>
 
-      <li class="side-item" data-target="proj-chatbot">
+      <li class="side-item" data-target="proj-uq-mas">
         <span class="side-item-num">01</span>
-        <span class="side-item-title">Video RAG Project</span>
+        <span class="side-item-title">Uncertainty Quantification, Multi‑Agent LLMs</span>
       </li>
-      <li class="side-item" data-target="proj-chatbot">
+      <li class="side-item" data-target="proj-multimodal-rag">
         <span class="side-item-num">02</span>
-        <span class="side-item-title">GitHub Chatbot</span>
+        <span class="side-item-title">Multimodal RAG Pipeline</span>
+      </li>
+      <li class="side-item" data-target="proj-mose">
+        <span class="side-item-num">03</span>
+        <span class="side-item-title">MoE for Recommendation Systems</span>
+      </li>
+      <li class="side-item" data-target="proj-marl">
+        <span class="side-item-num">04</span>
+        <span class="side-item-title">Multi‑Objective RL, Max‑Min Criterion</span>
+      </li>
+      <li class="side-item" data-target="proj-tool-calling">
+        <span class="side-item-num">05</span>
+        <span class="side-item-title">Fine‑Tuning LLMs for Tool Calling</span>
       </li>
       <li class="side-item" data-target="proj-unlearning">
-        <span class="side-item-num">03</span>
+        <span class="side-item-num">06</span>
         <span class="side-item-title">Machine Unlearning</span>
       </li>
-      <li class="side-item" data-target="proj-eval">
-        <span class="side-item-num">04</span>
-        <span class="side-item-title">Code Evaluation Platform</span>
+      <li class="side-item" data-target="proj-gha-vit">
+        <span class="side-item-num">07</span>
+        <span class="side-item-title">Graph Head Attention for ViT</span>
+      </li>
+      <li class="side-item" data-target="proj-emoticode">
+        <span class="side-item-num">08</span>
+        <span class="side-item-title">EmotiCode: Emotion Classification</span>
+      </li>
+      <li class="side-item" data-target="proj-cv-kaggle">
+        <span class="side-item-num">09</span>
+        <span class="side-item-title">CV Kaggle Competitions</span>
+      </li>
+      <li class="side-item" data-target="proj-library">
+        <span class="side-item-num">10</span>
+        <span class="side-item-title">Library Management System</span>
       </li>
       <li class="side-item" data-target="proj-recipe">
-        <span class="side-item-num">05</span>
+        <span class="side-item-num">11</span>
         <span class="side-item-title">Recipe Rating Prediction</span>
       </li>
     </ul>
@@ -339,64 +364,104 @@
       <p>A closer look at what I've built - research prototypes, course projects, and things made for fun.</p>
     </div>
 
-    <!-- ================= PROJECT 5 ================= -->
-    <article class="project-block" id="proj-chatbot">
+    <!-- ================= PROJECT: UQ Multi-Agent ================= -->
+    <article class="project-block" id="proj-uq-mas">
       <div class="pb-top">
         <div class="pb-title-wrap">
-          <span class="pb-title">Video RAG Project</span>
+          <span class="pb-title">Uncertainty Quantification in Multi‑Agent Systems</span>
           <span class="status-pill amber">In Progress</span>
         </div>
-        <div class="pb-meta-right">May '25 – Jun '25</div>
+        <div class="pb-meta-right">Jul '26 – Present</div>
       </div>
       <div class="pb-subrow">
-        <span class="pb-type">Personal Project</span>
+        <span class="pb-type">M.Tech Thesis</span>
         <div class="pb-tags">
-          <span>RAG</span><span>LangChain</span><span>HuggingFace</span><span>Streamlit</span>
+          <span>Conformal Prediction</span><span>Multi‑Agent LLMs</span><span>DAG Systems</span>
         </div>
       </div>
       <p class="pb-desc">
-        A Retrieval-Augmented Generation system for Videos. Drafting Phase.
+        Investigating coverage‑guaranteed conformal prediction for cross‑agent uncertainty inheritance in dynamic DAG‑structured multi‑agent LLM systems - a gap unaddressed by existing frameworks (G‑Designer, DySCo, UProp, DebUnc). Identified and formalized theoretical flaws in an existing e‑process‑based topology design framework, including an independence violation and a "groupthink" failure mode from correlated agent errors. Developing calibrated confidence scoring between connected agents and a method to compose scores across a multi‑agent chain for a provable end‑to‑end accuracy guarantee.
       </p>
-      <!-- <div class="pb-links">
-        <a class="pb-link" href="#" target="_blank" rel="noopener">
-          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.97 5.26.97 11.53c0 4.93 3.2 9.11 7.64 10.59.56.1.76-.24.76-.54 0-.27-.01-1.16-.02-2.1-3.11.68-3.77-1.32-3.77-1.32-.51-1.3-1.24-1.64-1.24-1.64-1.02-.7.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15 1 1.71 2.62 1.22 3.26.93.1-.72.39-1.22.71-1.5-2.48-.28-5.09-1.24-5.09-5.51 0-1.22.43-2.21 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.08 1.15.9-.25 1.85-.37 2.8-.37.95 0 1.9.13 2.8.37 2.14-1.45 3.08-1.15 3.08-1.15.61 1.54.23 2.68.11 2.96.72.79 1.15 1.78 1.15 3 0 4.28-2.62 5.23-5.11 5.51.4.35.76 1.04.76 2.1 0 1.52-.01 2.74-.01 3.11 0 .3.2.65.77.54 4.43-1.48 7.63-5.66 7.63-10.59C23.03 5.26 18.27.5 12 .5z"/></svg>
-          GitHub
-        </a>
-        <a class="pb-link" href="#" target="_blank" rel="noopener">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          Demo
-        </a>
-      </div> -->
     </article>
 
-    <!-- ================= PROJECT 4 ================= -->
-    <article class="project-block" id="proj-chatbot">
+    <!-- ================= PROJECT: Multimodal RAG ================= -->
+    <article class="project-block" id="proj-multimodal-rag">
       <div class="pb-top">
         <div class="pb-title-wrap">
-          <span class="pb-title">GitHub Chatbot</span>
+          <span class="pb-title">Multimodal RAG Pipeline</span>
           <span class="status-pill green">Completed</span>
         </div>
-        <div class="pb-meta-right">May '25 – Jun '25</div>
+        <div class="pb-meta-right">Aug '26 – Sep '26</div>
       </div>
       <div class="pb-subrow">
         <span class="pb-type">Personal Project</span>
         <div class="pb-tags">
-          <span>RAG</span><span>LangChain</span><span>HuggingFace</span><span>Streamlit</span>
+          <span>PyTorch</span><span>CLIP</span><span>Contrastive Learning</span><span>Qwen‑VL</span>
         </div>
       </div>
       <p class="pb-desc">
-        A Retrieval-Augmented Generation system for semantic code search across GitHub repositories, built on HuggingFace embeddings, a Chroma vector store, and LangChain. DeepSeek handles contextual reasoning across multiple files, with caching and index tuning to keep responses fast.
+        Implemented a BERT‑style transformer text encoder from scratch in PyTorch (embeddings, multi‑head self‑attention, FFN, 12‑layer stack), validated to cosine similarity 1.0 against a reference bge‑base‑en‑v1.5 checkpoint, then fine‑tuned via contrastive learning (InfoNCE, hard + in‑batch negatives) on 82K mined query–passage pairs, improving Recall@1 0.39→0.65 and Recall@10 0.74→0.94. Architected a dual‑path multimodal retriever over a 638‑document PDF corpus, pairing the custom encoder with frozen CLIP for images, recovering ~1,200 figures via a CLIP‑based attachment gate at ~85% precision. Added cross‑encoder reranking (bge‑reranker‑base) for adaptive top‑k selection, grounding a Qwen‑VL backbone in retrieved text and figures to cut irrelevant context by ~30%, plus an observability layer logging per‑query retrieval paths, latency, and relevance scores.
       </p>
-      <div class="pb-links">
-        <!-- <a class="pb-link" href="#" target="_blank" rel="noopener">
-          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.97 5.26.97 11.53c0 4.93 3.2 9.11 7.64 10.59.56.1.76-.24.76-.54 0-.27-.01-1.16-.02-2.1-3.11.68-3.77-1.32-3.77-1.32-.51-1.3-1.24-1.64-1.24-1.64-1.02-.7.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15 1 1.71 2.62 1.22 3.26.93.1-.72.39-1.22.71-1.5-2.48-.28-5.09-1.24-5.09-5.51 0-1.22.43-2.21 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.08 1.15.9-.25 1.85-.37 2.8-.37.95 0 1.9.13 2.8.37 2.14-1.45 3.08-1.15 3.08-1.15.61 1.54.23 2.68.11 2.96.72.79 1.15 1.78 1.15 3 0 4.28-2.62 5.23-5.11 5.51.4.35.76 1.04.76 2.1 0 1.52-.01 2.74-.01 3.11 0 .3.2.65.77.54 4.43-1.48 7.63-5.66 7.63-10.59C23.03 5.26 18.27.5 12 .5z"/></svg>
-          GitHub
-        </a>
-        <a class="pb-link" href="#" target="_blank" rel="noopener">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          Demo
-        </a> -->
+    </article>
+
+    <!-- ================= PROJECT: MoSE ================= -->
+    <article class="project-block" id="proj-mose">
+      <div class="pb-top">
+        <div class="pb-title-wrap">
+          <span class="pb-title">Mixture of Experts for Recommendation Systems</span>
+          <span class="status-pill green">Completed</span>
+        </div>
+        <div class="pb-meta-right">Sep '26</div>
       </div>
+      <div class="pb-subrow">
+        <span class="pb-type">Course Project</span>
+        <div class="pb-tags">
+          <span>MMoE</span><span>Self‑Attention</span><span>MovieLens</span>
+        </div>
+      </div>
+      <p class="pb-desc">
+        Built a self‑attention Mixture‑of‑Experts recommender (MoSE), replacing LSTM experts with 4 parallel causal self‑attention experts under a shared MMoE gate for joint next‑item ranking and rating prediction on MovieLens. Achieved 0.282 Recall@10 / 0.163 NDCG@10 (~3× an LSTM‑expert baseline) while cutting rating RMSE from 1.177 to 1.097. Diagnosed emergent expert specialization via gate‑weight and attention analysis, consistent with MMoE routing dynamics reported in RecSys'19, and ran targeted ablations isolating an 11–12% Recall/NDCG gain from positional encoding.
+      </p>
+    </article>
+
+    <!-- ================= PROJECT: Multi-Objective RL ================= -->
+    <article class="project-block" id="proj-marl">
+      <div class="pb-top">
+        <div class="pb-title-wrap">
+          <span class="pb-title">Multi‑Objective RL with Max‑Min Criterion: A Review &amp; Analysis</span>
+          <span class="status-pill green">Completed</span>
+        </div>
+        <div class="pb-meta-right">Jan '26 – Apr '26</div>
+      </div>
+      <div class="pb-subrow">
+        <span class="pb-type">Course Project · Game Theory</span>
+        <div class="pb-tags">
+          <span>Reinforcement Learning</span><span>Game Theory</span><span>Python</span>
+        </div>
+      </div>
+      <p class="pb-desc">
+        Reviewed a paper on making reinforcement learning fair across multiple competing goals, framed as a game where one side pushes to improve the worst‑performing goal while the other tries to exploit any imbalance. Reimplemented both algorithms from scratch in Python, including a custom "dosa stall" simulation balancing revenue against customer rating. Found both algorithms broke down when goals were on very different scales, and fixed this by rescaling each goal to a common range before comparison, consistently improving fairness across all test scenarios.
+      </p>
+    </article>
+
+    <!-- ================= PROJECT: Tool Calling Fine-Tuning ================= -->
+    <article class="project-block" id="proj-tool-calling">
+      <div class="pb-top">
+        <div class="pb-title-wrap">
+          <span class="pb-title">Fine‑Tuning LLMs for Tool Calling</span>
+          <span class="status-pill amber">In Progress</span>
+        </div>
+        <div class="pb-meta-right">Aug '26</div>
+      </div>
+      <div class="pb-subrow">
+        <span class="pb-type">Personal Project</span>
+        <div class="pb-tags">
+          <span>Fine‑Tuning</span><span>Tool Calling</span>
+        </div>
+      </div>
+      <p class="pb-desc">
+        Fine‑tuning an LLM for improved tool‑calling accuracy.
+      </p>
     </article>
 
     <!-- ================= PROJECT 3 ================= -->
@@ -416,52 +481,95 @@
         </div>
       </div>
       <p class="pb-desc">
-        A cluster-based shard framework for machine unlearning in graph-based recommendation systems, using KMeans partitioning and adaptive aggregation. Cuts retraining cost by 85% while keeping accuracy within 1–2% of a full retrain - validated for user-, item-, and sample-wise unlearning. Published in IEEE.
+        A cluster-based shard framework for machine unlearning in graph-based recommendation systems, using KMeans partitioning and adaptive aggregation. Cuts retraining cost by 85% while keeping accuracy within 1–2% of a full retrain - validated for user-, item-, and sample-wise unlearning. Published as "Machine Unlearning in Recommendation Systems," IEEE ICTEST 2025.
       </p>
       <div class="pb-links">
-        <!-- <a class="pb-link" href="#" target="_blank" rel="noopener">
-          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.97 5.26.97 11.53c0 4.93 3.2 9.11 7.64 10.59.56.1.76-.24.76-.54 0-.27-.01-1.16-.02-2.1-3.11.68-3.77-1.32-3.77-1.32-.51-1.3-1.24-1.64-1.24-1.64-1.02-.7.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15 1 1.71 2.62 1.22 3.26.93.1-.72.39-1.22.71-1.5-2.48-.28-5.09-1.24-5.09-5.51 0-1.22.43-2.21 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.08 1.15.9-.25 1.85-.37 2.8-.37.95 0 1.9.13 2.8.37 2.14-1.45 3.08-1.15 3.08-1.15.61 1.54.23 2.68.11 2.96.72.79 1.15 1.78 1.15 3 0 4.28-2.62 5.23-5.11 5.51.4.35.76 1.04.76 2.1 0 1.52-.01 2.74-.01 3.11 0 .3.2.65.77.54 4.43-1.48 7.63-5.66 7.63-10.59C23.03 5.26 18.27.5 12 .5z"/></svg>
-          GitHub
-        </a>
-        <a class="pb-link" href="#" target="_blank" rel="noopener">
+        <a class="pb-link" href="https://ieeexplore.ieee.org/document/11042432" target="_blank" rel="noopener">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
           IEEE Paper
         </a>
-      </div> -->
+      </div>
     </article>
 
-    <!-- ================= PROJECT 2 ================= -->
-    <article class="project-block" id="proj-eval">
+    <!-- ================= PROJECT: GHA-ViT ================= -->
+    <article class="project-block" id="proj-gha-vit">
       <div class="pb-top">
         <div class="pb-title-wrap">
-          <span class="pb-title">Code Evaluation Platform</span>
+          <span class="pb-title">Graph Head Attention for Vision Transformers</span>
           <span class="status-pill green">Completed</span>
         </div>
-        <div class="pb-meta-right">Oct '24 – Nov '24</div>
+        <div class="pb-meta-right">Mar '26 – Apr '26</div>
       </div>
       <div class="pb-subrow">
-        <span class="pb-type">Course Project</span>
+        <span class="pb-type">Personal Project</span>
         <div class="pb-tags">
-          <span>GenAI</span><span>VueJS</span><span>RESTAPIs</span><span>GeminiAPI</span>
+          <span>PyTorch</span><span>ViT</span><span>Sparse Attention</span><span>CIFAR‑10</span>
         </div>
       </div>
       <p class="pb-desc">
-        A full-stack GenAI evaluation platform that automates grading of programming assignments - LLM-based functionality checks, plagiarism detection, and static code quality assessment, with role-based dashboards for students, instructors, and admins. Built with Python, SQL, Vue.js, and the Gemini and GitHub APIs.
+        Implemented Graph Head Attention (GHA‑ViT) from scratch in PyTorch - replacing standard multi-head self-attention with Top-k sparse graph attention, as no public implementation existed - benchmarked against ViT on CIFAR-10. Reduced attention complexity from O(N²) to O(Nk), achieving 60.79% attention sparsity within 0.7% of baseline ViT accuracy (73.57% vs. 74.27%). Showed GHA-ViT's sparse attention consistently outperforming dense ViT under shuffle, noise, and masking perturbations. Designed two extensions - Multi-Scale k Graph Attention and spatial-bias attention - with the relative-position variant reaching 74.88% accuracy, beating both baselines.
       </p>
-      <div class="pb-links">
-        <a class="pb-link" href="#" target="_blank" rel="noopener">
-          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.97 5.26.97 11.53c0 4.93 3.2 9.11 7.64 10.59.56.1.76-.24.76-.54 0-.27-.01-1.16-.02-2.1-3.11.68-3.77-1.32-3.77-1.32-.51-1.3-1.24-1.64-1.24-1.64-1.02-.7.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15 1 1.71 2.62 1.22 3.26.93.1-.72.39-1.22.71-1.5-2.48-.28-5.09-1.24-5.09-5.51 0-1.22.43-2.21 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.08 1.15.9-.25 1.85-.37 2.8-.37.95 0 1.9.13 2.8.37 2.14-1.45 3.08-1.15 3.08-1.15.61 1.54.23 2.68.11 2.96.72.79 1.15 1.78 1.15 3 0 4.28-2.62 5.23-5.11 5.51.4.35.76 1.04.76 2.1 0 1.52-.01 2.74-.01 3.11 0 .3.2.65.77.54 4.43-1.48 7.63-5.66 7.63-10.59C23.03 5.26 18.27.5 12 .5z"/></svg>
-          GitHub
-        </a>
-        <!-- <a class="pb-link" href="#" target="_blank" rel="noopener">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          Demo
-        </a> -->
-        <!-- <a class="pb-link" href="#" target="_blank" rel="noopener">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          Web App
-        </a> -->
+    </article>
+
+    <!-- ================= PROJECT: EmotiCode ================= -->
+    <article class="project-block" id="proj-emoticode">
+      <div class="pb-top">
+        <div class="pb-title-wrap">
+          <span class="pb-title">EmotiCode: Multi‑Script Emotion Classification in Low‑Resource Languages</span>
+          <span class="status-pill green">Completed</span>
+          <span class="status-pill silver">Rank 7</span>
+        </div>
+        <div class="pb-meta-right">Jul '25</div>
       </div>
+      <div class="pb-subrow">
+        <span class="pb-type">Kaggle Competition</span>
+        <div class="pb-tags">
+          <span>QLoRA</span><span>Gemma‑3</span><span>Low‑Resource NLP</span>
+        </div>
+      </div>
+      <p class="pb-desc">
+        Fine-tuned Google's gemma-3-1b-it (1B-param) for 6-class emotion classification across three low-resource, script-diverse languages - Santali (Ol Chiki), Kashmiri (Arabic script), and Manipuri (Meitei Mayek) - using QLoRA (4-bit NF4, rank=32, α=64) targeting attention and FFN projection layers, with no machine-translation bridge. Reformulated classification as instruction-tuned text generation and trained via SFT on 7,176 samples across a class-imbalanced 6-emotion label set. Ranked 7th in the competition with a Macro F1 of 0.51, under a single mandated 1B-parameter base model and a fixed evaluation protocol banning ensembling and external translation.
+      </p>
+    </article>
+
+    <!-- ================= PROJECT: CV Kaggle ================= -->
+    <article class="project-block" id="proj-cv-kaggle">
+      <div class="pb-top">
+        <div class="pb-title-wrap">
+          <span class="pb-title">Computer Vision Kaggle Competitions - DLP Course</span>
+          <span class="status-pill green">Completed</span>
+        </div>
+        <div class="pb-meta-right">Jul '25 – Aug '25</div>
+      </div>
+      <div class="pb-subrow">
+        <span class="pb-type">Course Project · Kaggle</span>
+        <div class="pb-tags">
+          <span>ResNet‑18</span><span>U‑Net</span><span>YOLOv8</span>
+        </div>
+      </div>
+      <p class="pb-desc">
+        Built a ResNet-18 classifier trained entirely from scratch for 10-class flora/fauna image classification on 10K images, scoring 50% weighted F1. Designed a custom U-Net with a PixelShuffle-based 4× upsampler for joint low-light image denoising and super-resolution, achieving 37.7 dB best validation PSNR. Fine-tuned YOLOv8n for 6-class mosquito-species object detection, achieving 0.47 mAP@0.50 on validation.
+      </p>
+    </article>
+
+    <!-- ================= PROJECT: Library Management ================= -->
+    <article class="project-block" id="proj-library">
+      <div class="pb-top">
+        <div class="pb-title-wrap">
+          <span class="pb-title">Full-Stack Library Management System</span>
+          <span class="status-pill green">Completed</span>
+        </div>
+        <div class="pb-meta-right">May '24 – Sep '24</div>
+      </div>
+      <div class="pb-subrow">
+        <span class="pb-type">Personal Project</span>
+        <div class="pb-tags">
+          <span>Vue.js</span><span>Flask</span><span>Celery</span><span>Redis</span>
+        </div>
+      </div>
+      <p class="pb-desc">
+        Engineered a full-stack system with Vue.js 3 and a Flask REST API (15+ endpoints), implementing RBAC (Flask-Security) to separate librarian/member workflows and an approval-based issue-return system. Automated recurring operations with Celery + Redis task queues and Celery Beat - daily overdue reminders, monthly PDF/CSV report generation, and expired-reservation cleanup.
+      </p>
     </article>
 
     <!-- ================= PROJECT 1 ================= -->

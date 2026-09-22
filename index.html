@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>R Srimathi - Portfolio</title>
+<link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -92,7 +93,7 @@
     align-items:center;
     justify-content:space-between;
   }
-  .nav-mark{
+  /* .nav-mark{
     font-family:'Cormorant Garamond',serif;
     font-weight:600;
     font-size:1.25rem;
@@ -101,6 +102,11 @@
     -webkit-background-clip:text;
     background-clip:text;
     color:transparent;
+  } */
+  .nav-mark{
+    /* remove the gradient text styles, keep only these */
+    display:flex;
+    align-items:center;
   }
   .nav-links{
     display:flex;
@@ -506,7 +512,10 @@
 
 <nav>
   <div class="nav-inner">
-    <a href="#" class="nav-mark">SR</a>
+    <!-- <a href="#" class="nav-mark">RS</a> -->
+    <a href="#" class="nav-mark">
+      <img src="favicon.png" alt="RS" style="height:32px;width:32px;object-fit:contain;display:block;">
+    </a>
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#education">Education</a>
@@ -520,17 +529,17 @@
 
 <header class="hero wrap">
   <div class="hero-kicker">Portfolio <em>/</em> Artificial Intelligence</div>
-  <h1 class="hero-name">Srimathi&nbsp;R</h1>
+  <h1 class="hero-name">R&nbsp;Srimathi</h1>
   <div class="hero-role">M.Tech, Artificial Intelligence - Indian Institute of Science</div>
   <div class="hero-divider"></div>
-  <p class="hero-desc">I build retrieval, reasoning, and machine‑unlearning systems - from RAG pipelines over codebases to privacy‑preserving recommendation engines. Grounded in research, shipped like production software.</p>
+  <p class="hero-desc">I build retrieval, reasoning, and multi-agent systems - from multimodal RAG pipelines with encoders trained from scratch to uncertainty-quantified, DAG-structured multi-agent LLM systems. Grounded in research, shipped like production software.</p>
   <div class="hero-stats">
     <div>
       <div class="hstat-num">9.52</div>
       <div class="hstat-label">CGPA · B.Sc, IIT Madras</div>
     </div>
     <div>
-      <div class="hstat-num">4</div>
+      <div class="hstat-num">3</div>
       <div class="hstat-label">Internships</div>
     </div>
     <div>
@@ -550,19 +559,19 @@
   <section id="about">
     <div class="sec-head reveal">
       <div class="eyebrow">01 - About</div>
-      <div class="sec-title">Researcher, builder, occasional fund‑raiser.</div>
+      <div class="sec-title">Researcher, builder, occasional fund-raiser.</div>
     </div>
     <div class="about-grid">
       <div class="about-text reveal">
-        <p>I'm an AI/ML engineer currently pursuing my <strong>M.Tech in Artificial Intelligence at IISc</strong>, after finishing a B.E. in Computer Science and a B.Sc. in Data Science in parallel. My work sits at the intersection of <strong>retrieval‑augmented generation</strong>, <strong>machine unlearning</strong>, and applied GenAI tooling - systems that need to reason over messy, real‑world data without falling over.</p>
-        <p>Outside the lab, I've run fundraising drives, led a 5,000‑attendee fest's registration desk, and managed budgets for one of India's largest techno‑cultural festivals. I like problems with a deadline and a leaderboard.</p>
+        <p>I'm an AI/ML engineer pursuing my <strong>M.Tech in Artificial Intelligence at IISc Bangalore</strong>, after a B.Sc. in Data Science &amp; Applications at IIT Madras and a B.E. in Computer Science, completed in parallel. My thesis work investigates <strong>coverage-guaranteed conformal prediction for uncertainty inheritance in multi-agent LLM systems</strong>, and I build <strong>multimodal retrieval-augmented generation</strong>, machine unlearning, and applied GenAI systems - the kind that need to reason over messy, real-world data without falling over.</p>
+        <p>Outside the lab, I've run fundraising drives, led a 5,000-attendee fest's registration desk, and managed budgets for one of India's largest techno-cultural festivals. I like problems with a deadline and a leaderboard.</p>
       </div>
       <div class="plate reveal">
-        <div class="plate-row"><span>Location</span><span>India</span></div>
-        <div class="plate-row"><span>Focus</span><span>RAG · LLMs · NLP</span></div>
+        <div class="plate-row"><span>Location</span><span>Bengaluru, India</span></div>
+        <div class="plate-row"><span>Focus</span><span>Multi-Agent LLMs · RAG · NLP</span></div>
         <div class="plate-row"><span>Status</span><span>M.Tech '27, IISc</span></div>
-        <div class="plate-row"><span>Teaching</span><span>TA, IIT Madras</span></div>
-        <div class="plate-row"><span>Languages</span><span>Python · SQL</span></div>
+        <div class="plate-row"><span>Teaching</span><span>TA, Linear Algebra, IISc</span></div>
+        <div class="plate-row"><span>Languages</span><span>Python · JavaScript</span></div>
       </div>
     </div>
   </section>
@@ -577,18 +586,18 @@
         <div class="metal-strip"></div>
         <div class="edu-degree">M.Tech, Artificial Intelligence</div>
         <div class="edu-school">Indian Institute of Science</div>
-        <div class="edu-meta"><span class="score">CGPA 8.0</span><span>2027</span></div>
+        <div class="edu-meta"><span class="score">CGPA 8.1</span><span>2027</span></div>
       </div>
       <div class="edu-card silver  reveal">
         <div class="metal-strip"></div>
-        <div class="edu-degree">B.Sc., Data Science &amp; Applications</div>
+        <div class="edu-degree">B.Sc., Data Science &amp; Applications  [🥇] </div>
         <div class="edu-school">Indian Institute of Technology, Madras</div>
         <div class="edu-meta"><span class="score">CGPA 9.52</span><span>2025</span></div>
       </div>
       <div class="edu-card steel reveal">
         <div class="metal-strip"></div>
         <div class="edu-degree">B.E., Computer Science &amp; Engineering</div>
-        <div class="edu-school">Easwari Engineering College</div>
+        <div class="edu-school">Easwari Engineering College (SRM)</div>
         <div class="edu-meta"><span class="score">CGPA 8.81</span><span>2025</span></div>
       </div>
     </div>
@@ -609,18 +618,24 @@
           <span class="ingot gold">LLMs</span>
           <span class="ingot gold">RAG</span>
           <span class="ingot gold">Optimization</span>
+          <span class="ingot gold">Multi-Agent Systems</span>
         </div>
       </div>
 
       <div>
         <div class="bullion-group-label" style="color:var(--silver-1);"><span class="stamp" style="background:linear-gradient(160deg,var(--silver-1),var(--silver-3));">Ag</span>Frameworks &amp; Libraries</div>
         <div class="bullion-row">
-          <span class="ingot silver">LangChain</span>
+          <span class="ingot silver">PyTorch</span>
           <span class="ingot silver">HuggingFace</span>
-          <span class="ingot silver">Scikit‑learn</span>
+          <span class="ingot silver">Transformers</span>
+          <span class="ingot silver">LangChain</span>
+          <span class="ingot silver">Scikit-learn</span>
+          <span class="ingot silver">XGBoost</span>
+          <span class="ingot silver">SHAP</span>
+          <span class="ingot silver">CLIP</span>
+          <span class="ingot silver">YOLOv8</span>
           <span class="ingot silver">Pandas</span>
           <span class="ingot silver">NumPy</span>
-          <span class="ingot silver">Streamlit</span>
         </div>
       </div>
 
@@ -628,17 +643,19 @@
         <div class="bullion-group-label" style="color:var(--text);"><span class="stamp" style="background:linear-gradient(160deg,#2a2a2e,#050506);color:#fff;">Pt</span>Languages</div>
         <div class="bullion-row">
           <span class="ingot black">Python</span>
-          <span class="ingot black">SQL</span>
+          <span class="ingot black">JavaScript</span>
         </div>
       </div>
-
+      
       <div>
         <div class="bullion-group-label" style="color:var(--silver-2);"><span class="stamp" style="background:linear-gradient(160deg,var(--steel-1),var(--steel-3));">Ti</span>Engineering &amp; Web</div>
         <div class="bullion-row">
-          <span class="ingot gray">REST APIs</span>
-          <span class="ingot gray">GitHub API</span>
+          <span class="ingot gray">Flask</span>
           <span class="ingot gray">Vue.js</span>
-          <span class="ingot gray">Clustering</span>
+          <span class="ingot gray">Celery</span>
+          <span class="ingot gray">Redis</span>
+          <span class="ingot gray">Streamlit</span>
+          <span class="ingot gray">Git/GitHub</span>
         </div>
       </div>
 
@@ -646,48 +663,54 @@
   </section>
 
   <section id="projects">
-    <div class="sec-head reveal">
-      <div class="eyebrow">04 - Projects</div>
-      <div class="sec-title">Selected work</div>
+    <div class="sec-head reveal" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;">
+      <div>
+        <div class="eyebrow">04 - Projects</div>
+        <div class="sec-title">Selected work</div>
+      </div>
+      <a href="projects.html" style="font-family:'IBM Plex Mono',monospace; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold-2); white-space:nowrap;">
+        View all projects →
+      </a>
     </div>
     <div class="proj-list">
 
       <div class="proj-card m-gold reveal">
-        <div class="proj-top"><span class="proj-title">GitHub Chatbot</span><span class="proj-date">May '25 – Jun '25</span></div>
-        <div class="proj-type">Personal Project</div>
+        <div class="proj-top"><span class="proj-title">Uncertainty Quantification in Multi-Agent Systems</span><span class="proj-date">Jul '26 – Present</span></div>
+        <div class="proj-type">M.Tech Thesis</div>
         <ul>
-          <li>Built a RAG system using HuggingFace embeddings, Chroma Vector DB, LangChain, and Streamlit for semantic code retrieval across GitHub repositories.</li>
-          <li>Integrated DeepSeek LLM for contextual code reasoning with chunking, similarity search, and prompt augmentation across multiple files.</li>
-          <li>Optimized embedding indexing and caching for low‑latency inference and improved response relevance.</li>
+          <li>Investigating coverage-guaranteed conformal prediction for cross-agent uncertainty inheritance in dynamic DAG-structured multi-agent LLM systems, a gap unaddressed by existing frameworks (G-Designer, DySCo, UProp, DebUnc).</li>
+          <li>Identified and formalized theoretical flaws in an existing e-process-based topology design framework, including an independence violation and a "groupthink" failure mode from correlated agent errors.</li>
+          <li>Developing calibrated confidence scoring between connected agents and a method to compose scores across a multi-agent chain for a provable end-to-end accuracy guarantee.</li>
         </ul>
       </div>
 
       <div class="proj-card m-silver reveal">
-        <div class="proj-top"><span class="proj-title">Machine Unlearning</span><span class="proj-date">Sep '24 – Apr '25</span></div>
-        <div class="proj-type">Final Year Project, B.E.</div>
+        <div class="proj-top"><span class="proj-title">Multimodal RAG Pipeline</span><span class="proj-date">Aug '26 – Sep '26</span></div>
+        <div class="proj-type">Personal Project</div>
         <ul>
-          <li>Proposed a cluster‑based shard framework for machine unlearning in graph‑based recommendation systems using KMeans partitioning and adaptive aggregation.</li>
-          <li>Achieved an 85% reduction in retraining cost while keeping accuracy within 1–2% of full retraining, validated against F1‑score and accuracy.</li>
-          <li>Supported user‑wise, item‑wise, and sample‑wise unlearning for privacy‑compliant collaborative filtering.</li>
+          <li>Implemented a BERT-style transformer text encoder from scratch in PyTorch, validated to cosine similarity 1.0 against a reference bge-base-en-v1.5 checkpoint, then fine-tuned via contrastive learning on 82K mined query–passage pairs, improving Recall@1 0.39→0.65.</li>
+          <li>Architected a dual-path multimodal retriever over a 638-document PDF corpus, pairing the custom text encoder with frozen CLIP for images, recovering ~1,200 figures via a CLIP-based attachment gate at ~85% precision.</li>
+          <li>Designed cross-encoder reranking for adaptive top-k selection, grounding a Qwen-VL backbone in retrieved text and figures to cut irrelevant context by ~30%.</li>
         </ul>
       </div>
 
       <div class="proj-card m-steel reveal">
-        <div class="proj-top"><span class="proj-title">Automating Student Project Code Evaluation</span><span class="proj-date">Oct '24 – Nov '24</span></div>
+        <div class="proj-top"><span class="proj-title">Mixture of Experts for Recommendation Systems</span><span class="proj-date">Sep '26</span></div>
         <div class="proj-type">Course Project</div>
         <ul>
-          <li>Developed a full‑stack GenAI evaluation platform with Python, SQL, Vue.js, the GitHub API, and the Gemini API to automate grading.</li>
-          <li>Implemented LLM‑based functionality verification, plagiarism detection, and code quality assessment with role‑based dashboards.</li>
-          <li>Cut manual grading effort by automating rubric‑based validation and static analysis.</li>
+          <li>Built a self-attention Mixture-of-Experts recommender (MoSE), replacing LSTM experts with 4 parallel causal self-attention experts under a shared MMoE gate for joint next-item ranking and rating prediction on MovieLens.</li>
+          <li>Achieved 0.282 Recall@10 / 0.163 NDCG@10 (~3× an LSTM-expert baseline) while cutting rating RMSE from 1.177 to 1.097.</li>
+          <li>Diagnosed emergent expert specialization via gate-weight and attention analysis, consistent with MMoE routing dynamics reported in RecSys'19.</li>
         </ul>
       </div>
 
       <div class="proj-card m-gunmetal reveal">
-        <div class="proj-top"><span class="proj-title">Food Recipe Rating Prediction</span><span class="proj-date">Jan '24 – Feb '24</span></div>
-        <div class="proj-type">Course Project</div>
+        <div class="proj-top"><span class="proj-title">Machine Unlearning in Recommendation Systems</span><a href="https://ieeexplore.ieee.org/document/11042432" >PDF →</a><span class="proj-date">Sep '24 – Apr '25</span></div>
+        <div class="proj-type">Research Project · Published, IEEE</div>
         <ul>
-          <li>Built a multi‑class classification model using Random Forest, SVM, and a Voting Classifier with extensive feature engineering and EDA.</li>
-          <li>Evaluated ensemble and baseline models via cross‑validation and F1‑score, reaching a Top‑50 leaderboard ranking.</li>
+          <li>Proposed a cluster-based shard framework for machine unlearning in graph-based recommendation systems using KMeans partitioning and adaptive aggregation.</li>
+          <li>Cut retraining cost by 85% while keeping accuracy within 1–2% of full retraining, validated via F1-score and accuracy.</li>
+          <li>Supported user-wise, item-wise, and sample-wise unlearning for privacy-compliant collaborative filtering.</li>
         </ul>
       </div>
       <div style="text-align:center; margin-top:1rem;">
@@ -707,10 +730,18 @@
 
       <div class="tl-item">
         <div class="tl-dot"></div>
+        <span class="tl-date">Aug '26 – Present</span>
+        <div class="tl-role">Teaching Assistant, Linear Algebra (E0 298)</div>
+        <div class="tl-org">Indian Institute of Science, Bangalore</div>
+        <div class="tl-desc">TA for E0 298 – Linear Algebra and Its Applications, current semester.</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
         <span class="tl-date">May '26 – Jul '26</span>
-        <div class="tl-role">Data Science Intern</div>
+        <div class="tl-role">Data Scientist Intern</div>
         <div class="tl-org">IBM</div>
-        <div class="tl-desc"></div>
+        <div class="tl-desc">Built an end-to-end AI pipeline over 600+ multimodal marketing assets to power a customer-behavior model; extracted 5,000+ topics via LLMs and clustered them into 60+ semantic personas; modeled engagement/revenue drivers with XGBoost and SHAP; shipped a conversational agent over a centralized content database for non-technical stakeholders.</div>
       </div>
 
       <div class="tl-item">
@@ -718,29 +749,21 @@
         <span class="tl-date">May '25 – Jun '25</span>
         <div class="tl-role">Software Engineer Intern</div>
         <div class="tl-org">Simulation Software and Technology Pte Ltd</div>
-        <div class="tl-desc">Maintained frontend and backend services; debugging, testing, and documentation.</div>
+        <div class="tl-desc">Built full-stack features across a JavaScript frontend and Python backend, designing and integrating REST APIs with end-to-end testing; trained and integrated a query-handling model into a production-facing interface.</div>
       </div>
 
       <div class="tl-item">
         <div class="tl-dot"></div>
         <span class="tl-date">Sep '24 – Nov '24</span>
         <div class="tl-role">Research Intern</div>
-        <div class="tl-org">Vyoma Systems Pvt Ltd</div>
-        <div class="tl-desc">LLM exploration for RISC‑V processor test generation.</div>
+        <div class="tl-org">Vyoma Systems Pvt Ltd (IITM Research Park)</div>
+        <div class="tl-desc">Automated a chip verification pipeline, integrating a large-scale instruction test-generation library with an LLM-based test-code generator in a coverage-driven feedback loop, eliminating manual test authoring.</div>
       </div>
 
       <div class="tl-item">
         <div class="tl-dot"></div>
-        <span class="tl-date">Jul '23 – Aug '23</span>
-        <div class="tl-role">Research &amp; Development Intern</div>
-        <div class="tl-org">Diya Edulabs Pvt Ltd</div>
-        <div class="tl-desc">Worked on object recognition features for educational robots.</div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <span class="tl-date">Jan '23 – Aug '24</span>
-        <div class="tl-role">Statistics Teaching Assistant</div>
+        <span class="tl-date">Jan '23 – May '24</span>
+        <div class="tl-role">Teaching Assistant, Statistics</div>
         <div class="tl-org">Indian Institute of Technology, Madras</div>
         <div class="tl-desc">Led weekly live sessions, developed graded activities and supplementary content, and evaluated student performance.</div>
       </div>
@@ -754,10 +777,10 @@
       <div class="sec-title">Publications &amp; achievements</div>
     </div>
 
-    <div class="pub-banner reveal">
-      <div class="pub-text">Published a research paper on <strong>Machine Unlearning</strong>, peer‑reviewed and indexed in IEEE.</div>
+    <a class="pub-banner reveal" href="https://ieeexplore.ieee.org/document/11042432" target="_blank" rel="noopener" style="cursor:pointer;">
+      <div class="pub-text">Published <strong>"Machine Unlearning in Recommendation Systems"</strong>, IEEE ICTEST 2025 - indexed in IEEE Xplore.</div>
       <span class="pub-tag">IEEE</span>
-    </div>
+    </a>
 
     <div class="achieve-grid reveal">
       <div class="medal">
@@ -795,16 +818,24 @@
     </div>
     <div class="lead-list reveal">
       <div class="lead-item">
+        <div><div class="lead-role">Placement Representative</div><div class="lead-org">M.Tech AI, IISc · 2026–27</div></div>
+        <div class="lead-desc">Point of contact between the M.Tech cohort and recruiters for the AI program's placement process.</div>
+      </div>
+      <div class="lead-item">
+        <div><div class="lead-role">Finance Head</div><div class="lead-org">Computer Society of India</div></div>
+        <div class="lead-desc">Managed budgeting and financial planning for society events and initiatives.</div>
+      </div>
+      <div class="lead-item">
         <div><div class="lead-role">Professional Service Chairwoman</div><div class="lead-org">Rotaract Club · 2023–24</div></div>
         <div class="lead-desc">Planned and led fundraising initiatives supporting prosthetic leg assistance.</div>
       </div>
       <div class="lead-item">
         <div><div class="lead-role">Deputy Head, Finance &amp; Operations</div><div class="lead-org">Paradox, IIT Madras · '23 &amp; '24</div></div>
-        <div class="lead-desc">Led budgeting, logistics, and vendor operations for IIT Madras' annual techno‑cultural fest; previously Head of Registration (5,000+ attendees, 50+ volunteers) and QMS Coordinator.</div>
+        <div class="lead-desc">Led budgeting, logistics, and vendor operations for IIT Madras' annual techno-cultural fest; previously Head of Registration (5,000+ attendees, 50+ volunteers) and QMS Coordinator.</div>
       </div>
       <div class="lead-item">
         <div><div class="lead-role">Sports &amp; Cultural Director</div><div class="lead-org">Rotaract Club · 2022–23</div></div>
-        <div class="lead-desc">Organized events and raised ₹2L toward cleft‑lip surgeries for children.</div>
+        <div class="lead-desc">Organized events and raised ₹2L toward cleft-lip surgeries for children.</div>
       </div>
     </div>
   </section>
